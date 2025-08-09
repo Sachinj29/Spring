@@ -1,0 +1,70 @@
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+
+   <!--  This is for Scope
+
+    <bean id = "alien" class = "org.sachin.Alien" scope = "prototype">
+    </bean>
+
+    <bean id = "alien1" class = "org.sachin.Alien">
+    </bean>
+
+    -->
+
+
+   <!-- This is for Setter Injection
+
+    <bean id = "alien" class = "org.sachin.Alien" >
+        <property name="age" value = "22">
+
+        </property>
+    </bean>
+
+  -->
+
+    <!-- This is for Ref Attribute
+
+    <bean id = "alien" class = "org.sachin.Alien" >
+        <property name="age" value = "22"></property>
+        <property name="lap" ref="lap1"></property>
+    </bean>
+
+    -->
+
+
+
+    <!-- This is for Constructor Injection -->
+
+
+<!--        <constructor-arg value="22"/>-->
+<!--        <constructor-arg ref="lap1"/>-->
+       <!-- <property name="lap" ref="lap1"/> -->
+
+        <!-- <constructor-arg index="1" ref="lap1" />      by Ordering of index it assign the value.
+             <constructor-arg index="0" value="22"/>
+         -->
+
+      <!--   <constructor-arg name="age" value="22"/>
+        <constructor-arg name="lap" ref="lap1" />      by Ordering of By name it assign the value.
+        -->
+
+    <bean id = "alien" class = "org.sachin.Alien"  autowire="byName">
+        <property name="age" value="22"/>
+<!--        <property name="com" ref="lap1"/>-->
+    </bean>
+
+    <bean id = "com" class = "org.sachin.Laptop">
+    </bean>
+
+<!--    <bean id = "com1" class = "org.sachin.Desktop">-->
+<!--    </bean>-->
+    
+    
+
+</beans>
